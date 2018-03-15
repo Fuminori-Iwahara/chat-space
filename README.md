@@ -21,21 +21,23 @@ Things you may want to cover:
 ## Users table
 |Column|Type|Options|
 |------|----|-------|
-|name  |string|null: false, foreign_key:true|
-|email |string|null: false, foreign_key:true|
+|name  |string||
+|email |string||
 
 ### Association
-has_many:groups, through::menbers
-has_many:messeages
+has_many:groups, through::members
+has_many:messages
+has_many:members
 
-## Group table
+## Groups table
 |Column|Type|Options|
 |------|----|-------|
 |name  |string|null: false|
 
 ### Association
 has_many:users
-has_many:messages, through::members
+has_many:messages
+belongs_to:member
 
 ## members table
 |Column|Type|Options|
@@ -47,6 +49,8 @@ has_many:messages, through::members
 belongs_to:group
 belongs_to:user
 
+
+
 ## messages table
 |Column|Type|Options|
 |------|----|-------|
@@ -56,6 +60,6 @@ belongs_to:user
 |group_id|integer|null:false, foreign_key:ture|
 
 ### Assocaition
-belongs_to:member
+belongs_to:user
 belongs_to:group
 * ...

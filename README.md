@@ -21,7 +21,7 @@ Things you may want to cover:
 ## Users table
 |Column|Type|Options|
 |------|----|-------|
-|name  |string||
+|name  |string|null: false, index|
 |email |string||
 
 ### Association
@@ -37,7 +37,7 @@ has_many:members
 ### Association
 has_many:users
 has_many:messages
-belongs_to:member
+has_many:members
 
 ## members table
 |Column|Type|Options|

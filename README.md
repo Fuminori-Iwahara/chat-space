@@ -22,7 +22,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |name  |string|null: false, index|
-|email |string||
+|email |string|unique: true|
 
 ### Association
 has_many:groups, through::members
